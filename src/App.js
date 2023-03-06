@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import MoviesList from "./components/MoviesList";
 import MovieDetails from './components/MovieDetails'
 import axios from 'axios'
+import Error from "./components/Error";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MoviesList />} />
             <Route path="/movie/:id" element={<MovieDetails />} />
+            <Route path='*' element={<Error />} />
           </Routes>
         </BrowserRouter>
       </Container>
